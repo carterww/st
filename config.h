@@ -7,17 +7,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font =
-	"BlexMono Nerd Font:size=14:style=Regular:antialias=true:autohint=true,"
-	"BlexMono Nerd Font:size=14:style=Bold:antialias=true:autohint=true,"
-	"BlexMono Nerd Font:size=14:style=Italic:antialias=true:autohint=true,"
-	"BlexMono Nerd Font:size=14:style=Bold "
-	"Italic:antialias=true:autohint=true,"
-	"Hack Nerd Font:size=14:style=Regular:antialias=true:autohint=true,"
-	"Hack Nerd Font:size=14:style=Bold:antialias=true:autohint=true,"
-	"Hack Nerd Font:size=14:style=Italic:antialias=true:autohint=true,"
-	"Hack Nerd Font:size=14:style=Bold "
-	"Italic:antialias=true:autohint=true,";
+static char *font = "BlexMono Nerd Font:size=14:style=Regular:antialias=true,"
+		    "BlexMono Nerd Font:size=14:style=Bold:antialias=true,"
+		    "BlexMono Nerd Font:size=14:style=Italic:antialias=true,"
+		    "BlexMono Nerd Font:size=14:style=Bold "
+		    "Italic:antialias=true,"
+		    "Hack Nerd Font:size=14:style=Regular:antialias=true,"
+		    "Hack Nerd Font:size=14:style=Bold:antialias=true,"
+		    "Hack Nerd Font:size=14:style=Italic:antialias=true,"
+		    "Hack Nerd Font:size=14:style=Bold "
+		    "Italic:antialias=true,";
 static int borderpx = 10;
 float alpha = 0.85;
 
@@ -470,3 +469,27 @@ static uint selmasks[] = {
 static char ascii_printable[] = " !\"#$%&'()*+,-./0123456789:;<=>?"
 				"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 				"`abcdefghijklmnopqrstuvwxyz{|}~";
+
+/**
+ * Undercurl style. Set UNDERCURL_STYLE to one of the available styles.
+ *
+ * Curly: Dunno how to draw it *shrug*
+ *  _   _   _   _
+ * ( ) ( ) ( ) ( )
+ *	 (_) (_) (_) (_)
+ *
+ * Spiky:
+ * /\  /\   /\	/\
+ *   \/  \/	  \/
+ *
+ * Capped:
+ *	_     _     _
+ * / \   / \   / \
+ *    \_/   \_/
+ */
+// Available styles
+#define UNDERCURL_CURLY  0
+#define UNDERCURL_SPIKY  1
+#define UNDERCURL_CAPPED 2
+// Active style
+#define UNDERCURL_STYLE UNDERCURL_CURLY
