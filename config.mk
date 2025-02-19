@@ -7,8 +7,12 @@ VERSION = 0.9.2
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 
-X11INC = /usr/X11R6/include
-X11LIB = /usr/X11R6/lib
+#X11INC = /usr/X11R6/include
+#X11LIB = /usr/X11R6/lib
+
+# FreeBSD
+X11INC = /usr/local/include
+X11LIB = /usr/local/lib
 
 PKG_CONFIG = pkg-config
 
@@ -16,11 +20,12 @@ PKG_CONFIG = pkg-config
 INCS = -I$(X11INC) \
        `$(PKG_CONFIG) --cflags fontconfig` \
        `$(PKG_CONFIG) --cflags freetype2`
-LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
+LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft -lXrender\
        `$(PKG_CONFIG) --libs fontconfig` \
        `$(PKG_CONFIG) --libs freetype2`
 
 # flags
+CFLAGS = -O2
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
 STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
 STLDFLAGS = $(LIBS) $(LDFLAGS)
@@ -33,4 +38,4 @@ STLDFLAGS = $(LIBS) $(LDFLAGS)
 #MANPREFIX = ${PREFIX}/man
 
 # compiler and linker
-# CC = c99
+CC = cc

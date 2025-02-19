@@ -1,0 +1,40 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/local/include",
+      "-I/usr/local/include",
+      "-I/usr/local/include/freetype2",
+      "-I/usr/local/include/libpng16",
+      "-I/usr/local/include/freetype2",
+      "-I/usr/local/include/libpng16",
+      "-I/usr/local/include",
+      "-DVERSION=\"0.9.2\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O",
+      "-c",
+      "st.c"
+    ],
+    "directory": "/home/carter/code/suckless/st",
+    "file": "/home/carter/code/suckless/st/st.c"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/local/include",
+      "-I/usr/local/include",
+      "-I/usr/local/include/freetype2",
+      "-I/usr/local/include/libpng16",
+      "-I/usr/local/include/freetype2",
+      "-I/usr/local/include/libpng16",
+      "-I/usr/local/include",
+      "-DVERSION=\"0.9.2\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O",
+      "-c",
+      "x.c"
+    ],
+    "directory": "/home/carter/code/suckless/st",
+    "file": "/home/carter/code/suckless/st/x.c"
+  }
+]

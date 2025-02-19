@@ -1,12 +1,25 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <stddef.h>
+
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font =
+	"BlexMono Nerd Font:size=14:style=Regular:antialias=true:autohint=true,"
+	"BlexMono Nerd Font:size=14:style=Bold:antialias=true:autohint=true,"
+	"BlexMono Nerd Font:size=14:style=Italic:antialias=true:autohint=true,"
+	"BlexMono Nerd Font:size=14:style=Bold "
+	"Italic:antialias=true:autohint=true,"
+	"Hack Nerd Font:size=14:style=Regular:antialias=true:autohint=true,"
+	"Hack Nerd Font:size=14:style=Bold:antialias=true:autohint=true,"
+	"Hack Nerd Font:size=14:style=Italic:antialias=true:autohint=true,"
+	"Hack Nerd Font:size=14:style=Bold "
+	"Italic:antialias=true:autohint=true,";
+static int borderpx = 10;
+float alpha = 0.85;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -60,7 +73,7 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 0;
 
 /*
  * thickness of underline and bar cursors
@@ -93,9 +106,6 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
-float alpha = 0.8;
-
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -110,7 +120,7 @@ static const char *colorname[] = {
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc", "#555555", "gray90", /* default foreground colour */
-	"black",                        /* default background colour */
+	"#0b0b0b",                      /* default background colour */
 };
 
 /*
