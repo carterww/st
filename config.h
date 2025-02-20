@@ -66,7 +66,7 @@ int allowwindowops = 0;
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
 static double minlatency = 2;
-static double maxlatency = 33;
+static double maxlatency = 16;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -77,7 +77,7 @@ static unsigned int blinktimeout = 0;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling

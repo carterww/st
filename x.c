@@ -77,9 +77,9 @@ static void ttysend(const Arg *);
 
 /* macros */
 #define IS_SET(flag) ((win.mode & (flag)) != 0)
-#define TRUERED(x)   (((x)&0xff0000) >> 8)
-#define TRUEGREEN(x) (((x)&0xff00))
-#define TRUEBLUE(x)  (((x)&0xff) << 8)
+#define TRUERED(x)   (((x) & 0xff0000) >> 8)
+#define TRUEGREEN(x) (((x) & 0xff00))
+#define TRUEBLUE(x)  (((x) & 0xff) << 8)
 
 typedef XftDraw *Draw;
 typedef XftColor Color;
@@ -1701,14 +1701,16 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x,
 				// dc.font.ascent + 1, width, 1);
 				XFillRectangle(xw.dpy, XftDrawDrawable(xw.draw),
 				               ugc, winx,
-				               winy + dc.font.ascent + 1, width,
+				               winy + win.ch - wlw - 1, width,
 				               wlw);
 			} else if (base.ustyle == 3) {
 				int ww = win.cw;    // width;
-				int wh = dc.font.descent - wlw / 2 -
-				         1;    // r.height/7;
+				/* Cap arc height at 2. I don't like it too
+				 * large
+				 */
+				int wh = MIN(dc.font.descent - wlw / 2 - 1, 2);
 				int wx = winx;
-				int wy = winy + win.ch - dc.font.descent;
+				int wy = winy + dc.font.ascent + wh;
 
 #if UNDERCURL_STYLE == UNDERCURL_CURLY
 				// Draw waves

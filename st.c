@@ -1241,7 +1241,6 @@ csiparse(void)
 		p++;
 	}
 
-	csiescseq.buf[csiescseq.len] = '\0';
 	while (p < csiescseq.buf + csiescseq.len) {
 		np = NULL;
 		v = strtol(p, &np, 10);
