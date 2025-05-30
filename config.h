@@ -18,7 +18,7 @@ static char *font = "BlexMono Nerd Font:size=14:style=Regular:antialias=true,"
 		    "Hack Nerd Font:size=14:style=Bold "
 		    "Italic:antialias=true,";
 static int borderpx = 10;
-float alpha = 0.85;
+float alpha = 0.95;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -119,7 +119,7 @@ static const char *colorname[] = {
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc", "#555555", "gray90", /* default foreground colour */
-	"#0b0b0b",                      /* default background colour */
+	"#0e1415",                      /* default background colour */
 };
 
 /*
